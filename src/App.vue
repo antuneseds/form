@@ -1,7 +1,7 @@
 <script setup>
 import { reactive, ref } from 'vue'
 
-const titulo = ref('Oi VueJs!')
+const titulo = ref('Formulário!')
 const mostrarResultado = ref(false)
 
 const produto = reactive({
@@ -20,8 +20,10 @@ const produto = reactive({
 </script>
 
 <template>
-   <h1>{{ titulo }}</h1>
-  <div class="container d-flex flex-row gap-3">
+  <div>
+    <h1 class="titulo">{{ titulo }}</h1>
+  </div>
+  <div class="container d-flex flex-row gap-3 principal">
     <div class="formulario">
       <h2>Cadastro do produto</h2>
 
@@ -58,33 +60,33 @@ const produto = reactive({
       <div class="form-group">
         <label for="">Estado</label>
         <select type="form-control" name="estado" id="estado" v-model="produto.estado">
-          <option value="ac">Acre</option>
-          <option value="al">Alagoas</option>
-          <option value="ap">Amapá</option>
-          <option value="am">Amazonas</option>
-          <option value="ba">Bahia</option>
-          <option value="ce">Ceará</option>
-          <option value="df">Destrito Federal</option>
-          <option value="es">Espírito Santo</option>
-          <option value="go">Goiás</option>
-          <option value="ma">Maranhão</option>
-          <option value="mt">Mato Grosso</option>
-          <option value="ms">Mato Grosso do Sul</option>
-          <option value="mg">Minas Gerais</option>
-          <option value="pa">Pará</option>
-          <option value="pb">Paraíba</option>
-          <option value="pr">Paraná</option>
-          <option value="pe">Pernambuco</option>
-          <option value="pi">Piauí</option>
-          <option value="rj">Rio de Janeiro</option>
-          <option value="rn">Rio Grande do Norte</option>
-          <option value="rs">Rio Grande do Sul</option>
-          <option value="ro">Rondônia</option>
-          <option value="rr">Roraima</option>
-          <option value="sc">Santa Catarina</option>
-          <option value="sp">São Paulo</option>
-          <option value="se">Sergipe</option>
-          <option value="to">Tocantins</option>
+          <option value="AC">Acre</option>
+          <option value="AL">Alagoas</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="DF">Destrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="GO">Goiás</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="RO">Rondônia</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Tocantins</option>
         </select>
       </div>
 
@@ -124,41 +126,56 @@ const produto = reactive({
       <p>Linguagens de Programação: {{ produto.linguagensdeprogramacao }}</p>
       <p>Biografia: {{ produto.biografia }}</p>
     </div>
+    <div class="altera-titulo">
+      <label>Informe um novo título </label>
+      <input class="form-control" type="text" v-model="titulo" />
+    </div>
   </div>
-  <div class="altera-titulo">
-    <label>Informe um novo título </label>
-    <input class="form-control" type="text" v-model="titulo" />
-  </div>
+  
   
 </template>
 
 <style scoped>
 .formulario,
 .resultado {
-  width: 48%;
+  width: 65%;
   border-radius: 20px;
-  padding: 20px
+  padding: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 10%;
 }
 
 .formulario {
   background-color: black;
   color: white;
-  margin: 3rem 0 0 3rem;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .resultado {
   background-color: black;
   color: white;
-  margin: 3rem 0 0 3rem;
+ 
 }
 
 .altera-titulo {
   background-color: black;
   color: white;
-  margin: 1rem 2rem;
+  margin: 3rem 3rem;
   border-radius: 20px;
   padding: .75rem;
+  font-family: 'Times New Roman', Times, serif;
+  display: grid;
+  grid-column: 1 / 3;
 }
 
+.principal {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.titulo {
+  text-align: center;
+}
 
 </style>
