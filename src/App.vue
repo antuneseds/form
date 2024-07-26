@@ -1,21 +1,20 @@
 <script setup>
-import Resultados from './components/Resultados.vue';
-import Formulario from './components/Formulario.vue';
-
+import {ref} from 'vue';
+import Resultados from './components/Resultados.vue'
+import Formulario from './components/Formulario.vue'
+const produto = ref({nome: ''});
 </script>
 
 <template>
-   <header>
+  <header>
     <h1 class="titulo">{{ titulo }}</h1>
   </header>
 
   <main>
     <Formulario />
     <Resultados />
-
   </main>
-  </template>
-      
+</template>
 
 <style scoped>
 main {

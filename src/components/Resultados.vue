@@ -1,9 +1,9 @@
 <script setup>
-    
+  defineProps(['produto', 'formulario'])
 </script>
 
 <template>
-<div v-if="validate == true" class="resultado">
+  <div v-if="validate == true" class="resultado">
     <h2>Dados do produto</h2>
     <p>Nome: {{ produto.nome }}</p>
     <p>Email: {{ produto.email }}</p>
@@ -17,10 +17,11 @@
     <p>Biografia: {{ produto.biografia }}</p>
   </div>
 
-<div class="altera-titulo">
-  <label>Informe um novo título </label>
-  <input class="form-control" type="text" v-model="titulo" />
-</div>
-
+  <div class="altera-titulo">
+    <label>Informe um novo título </label>
+    <input class="form-control" type="text" v-model="titulo" />
+  </div>
 </template>
-<style scoped></style>
+<style scoped>
+
+</style>
