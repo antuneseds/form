@@ -3,6 +3,13 @@ import {ref} from 'vue';
 import Resultados from './components/Resultados.vue'
 import Formulario from './components/Formulario.vue'
 const produto = ref({nome: ''});
+const formulario = ref(false);
+
+function mostrarResultado(item) {
+  Object.assign(produto.value, item);
+  formulario.value = !formulario.value;
+}
+
 </script>
 
 <template>
@@ -11,8 +18,9 @@ const produto = ref({nome: ''});
   </header>
 
   <main>
-    <Formulario />
-    <Resultados />
+    <Formulario :formulario="formulario" @mostrarResultado="mostrarResultado"/>
+    <Resultados :produto="produto" :formulario="formulario"/>
+   
   </main>
 </template>
 

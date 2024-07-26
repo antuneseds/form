@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div v-if="validate == true" class="resultado">
+  <div v-if="formulario" class="resultado">
     <h2>Dados do produto</h2>
     <p>Nome: {{ produto.nome }}</p>
     <p>Email: {{ produto.email }}</p>
